@@ -319,6 +319,11 @@ constructor TTrackerGrid.Create(
 begin
   inherited Create(AOwner);
 
+  // The LCL only populates the screen's font list once. Since we're
+  // dynamically adding fonts at startup, we need to refresh this list.
+
+  Screen.Fonts.Clear;
+
   FFontSize := 12;
 
   Self.PatternMap := PatternMap;
