@@ -1,4 +1,4 @@
-![hUGETracker logo](https://nickfa.ro/images/HUGELogo.gif)
+![hUGETracker logo](https://nickfa.ro/w/images/HUGELogo.gif)
 
 This is the manual to [hUGETracker](https://github.com/SuperDisk/hUGETracker).
 I wrote this program because there wasn't a music editing tool for the Game Boy which fulfilled the following requirements:
