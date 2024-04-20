@@ -2099,6 +2099,7 @@ end;
 
 procedure TfrmTracker.MenuItem56Click(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).ChangeSelectionInstrument;
 end;
 
@@ -2464,6 +2465,7 @@ end;
 
 procedure TfrmTracker.MenuItem31Click(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).InterpolateSelection;
 end;
 
@@ -2502,21 +2504,25 @@ end;
 
 procedure TfrmTracker.OnIncrementValueBy1Click(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).IncrementSelection(1, 1, 0, 0, 1);
 end;
 
 procedure TfrmTracker.OnDecrementValueBy1Click(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).IncrementSelection(-1, -1, 0, 0, -1);
 end;
 
 procedure TfrmTracker.OnIncrementValueBy10Click(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).IncrementSelection(12, 10, 0, 0, $10);
 end;
 
 procedure TfrmTracker.OnDecrementValueBy10Click(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).IncrementSelection(-12, -10, 0, 0, -$10);
 end;
 
@@ -2677,51 +2683,61 @@ end;
 
 procedure TfrmTracker.TrackerPopupCopyClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   SendMessage((ActiveControl as TTrackerGrid).Handle, LM_COPY, 0, 0)
 end;
 
 procedure TfrmTracker.TrackerPopupCutClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   SendMessage((ActiveControl as TTrackerGrid).Handle, LM_CUT, 0, 0)
 end;
 
 procedure TfrmTracker.TrackerPopupEditEffectClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).OpenEffectEditor;
 end;
 
 procedure TfrmTracker.TrackerPopupEraseClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).EraseSelection
 end;
 
 procedure TfrmTracker.TrackerPopupFloodPasteClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).DoRepeatPaste;
 end;
 
 procedure TfrmTracker.TrackerPopupPasteClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   SendMessage((ActiveControl as TTrackerGrid).Handle, LM_PASTE, 0, 0)
 end;
 
 procedure TfrmTracker.TrackerPopupRedoClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).DoRedo
 end;
 
 procedure TfrmTracker.TrackerPopupSelectAllClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).SelectAll
 end;
 
 procedure TfrmTracker.TrackerPopupSelectChannelClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).SelectColumn
 end;
 
 procedure TfrmTracker.TrackerPopupTransposeOctaveDownClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).TransposeSelection(-12);
   if TrackerSettings.PreviewWhenBumping then
     PreviewNoteUnderCursor;
@@ -2729,6 +2745,7 @@ end;
 
 procedure TfrmTracker.TrackerPopupTransposeOctaveUpClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).TransposeSelection(12);
   if TrackerSettings.PreviewWhenBumping then
     PreviewNoteUnderCursor;
@@ -2736,6 +2753,7 @@ end;
 
 procedure TfrmTracker.TrackerPopupTransposeSemiDownClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).TransposeSelection(-1);
   if TrackerSettings.PreviewWhenBumping then
     PreviewNoteUnderCursor;
@@ -2743,6 +2761,7 @@ end;
 
 procedure TfrmTracker.TrackerPopupTransposeSemiUpClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).TransposeSelection(1);
   if TrackerSettings.PreviewWhenBumping then
     PreviewNoteUnderCursor;
@@ -2750,6 +2769,7 @@ end;
 
 procedure TfrmTracker.TrackerPopupUndoClick(Sender: TObject);
 begin
+  if not (ActiveControl is TTrackerGrid) then Exit;
   (ActiveControl as TTrackerGrid).DoUndo
 end;
 

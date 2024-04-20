@@ -1,14 +1,15 @@
 # hUGETracker .UGE v5/v6 format spec
 ## Data types
 
-| Name          | Byte length | Description                                                              |
-|---------------|-------------|--------------------------------------------------------------------------|
-| `uint8`       | 1           | Also known as char, ranges from 0 to 255.                                |
-| `uint32`      | 4           | Also known as word, ranges from 0 to 4,294,967,295.                      |
-| `int8`        | 1           | Ranges from -127 to 127.                                                 |
-| `bool`        | 1           | If not-zero, then True.                                                  |
-| `shortstring` | 256         | Consists of a byte defining the readable length and then 255 characters. |
-| `string`      | -           | A stream of characters, with 0x00 being the terminator value.            |
+| Name          | Byte length | Description                                                                                                                    |
+|---------------|-------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `uint8`       | 1           | Also known as char, ranges from 0 to 255.                                                                                      |
+| `uint32`      | 4           | Also known as word, ranges from 0 to 4,294,967,295.                                                                            |
+| `int8`        | 1           | Ranges from -127 to 127.                                                                                                       |
+| `bool`        | 1           | If not-zero, then True.                                                                                                        |
+| `shortstring` | 256         | Consists of a byte defining the readable length and then 255 characters.                                                       |
+| `string`      | -           | Consists of a uint32 defining the number of characters, and then a stream of characters, with 0x00 being the terminator value. |
+|               |             |                                                                                                                                |
 
 All types are little endian unless noted otherwise.
 
