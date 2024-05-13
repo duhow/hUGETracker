@@ -2062,8 +2062,7 @@ end;
 
 procedure TfrmTracker.MenuItem15Click(Sender: TObject);
 begin
-  // TODO: Don't rely on ISSO hosting this! (thanks though buddy)
-  OpenURL('https://eldred.fr/hUGETracker');
+  OpenURL('https://superdisk.github.io/hUGETracker');
 end;
 
 procedure TfrmTracker.MenuItem26Click(Sender: TObject);
