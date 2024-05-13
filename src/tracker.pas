@@ -601,6 +601,7 @@ begin
 
   UpdateBPMLabel;
 
+  FileSaveAs1.Dialog.FileName := FileName;
   LoadedFilename := FileName;
   UpdateWindowTitle;
 
