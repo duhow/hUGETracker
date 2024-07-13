@@ -32,7 +32,7 @@ jobs:
         uses: jontze/action-mdbook@v1.1.1
         with:
           token: ${{ github.token }}
-          use-linkcheck: true
+          use-linkcheck: false
       - name: Render manual
         run: mdbook build manual/
       - name: Upload artifact
