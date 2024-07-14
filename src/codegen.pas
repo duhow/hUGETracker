@@ -671,8 +671,8 @@ var
   begin
     Proc.Executable := 'rgbasm';
     Proc.Parameters.Clear;
-    Proc.Parameters.Add('-i' + ConcatPaths([CacheDir, 'render']));
-    Proc.Parameters.Add('-i' + ConcatPaths([RuntimeDir, 'hUGEDriver']));
+    Proc.Parameters.Add('-I' + ConcatPaths([CacheDir, 'render']));
+    Proc.Parameters.Add('-I' + ConcatPaths([RuntimeDir, 'hUGEDriver']));
     Proc.Parameters.Add('-o' + OutFile);
     for Define in Defines do
       // HACK: This just removes all instances of double quotes to avoid a bug
