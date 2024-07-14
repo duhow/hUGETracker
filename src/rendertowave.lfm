@@ -27,6 +27,7 @@ object frmRenderToWave: TfrmRenderToWave
     Height = 33
     Top = 11
     Width = 307
+    DialogKind = dkSave
     Filter = 'Wave|*.wav|MP3|*.mp3|FLAC|*.flac'
     FilterIndex = 0
     HideDirectories = False
