@@ -45,6 +45,9 @@ jobs:
 
           sudo apt install -yq ./fpc-laz_3.2.2-210709_amd64.deb ./fpc-src_3.2.2-210709_amd64.deb ./lazarus-project_3.0.0-0_amd64.deb
 
+          # FFmpeg dependencies
+          sudo apt-get -y install autoconf automake cmake libtool meson ninja-build pkg-config yasm zlib1g-dev
+
       - name: Install macOS dependencies
         if: matrix.name == 'Mac'
         run: |
@@ -93,8 +96,8 @@ jobs:
         shell: msys2 {0}
         run: ./hUGETracker/.github/scripts/build-ffmpeg.sh
 
-      - name: Compile FFmpeg (Mac)
-        if: matrix.name == 'Mac'
+      - name: Compile FFmpeg (Mac and Linux)
+        if: matrix.name == 'Mac' || matrix.name == 'Linux'
         shell: bash
         run: ./hUGETracker/.github/scripts/build-ffmpeg.sh
 
@@ -154,6 +157,13 @@ jobs:
           w
           q
           END
+
+      - name: Extra Linux packaging
+        if: matrix.name == 'Linux'
+        shell: bash
+        run: |
+          for f in asm link fix; do cp -v rgbds/rgb$f packaging/rgb$f; done
+          cp -v ffmpeg-4.4/ffmpeg packaging
 
       - name: Zip files (preserving permissions)
         shell: bash
