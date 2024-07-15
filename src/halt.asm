@@ -180,10 +180,10 @@ run_table4:
 
 init:
     ld a, $FF
-_addr = _AUD3WAVERAM
+DEF _addr = _AUD3WAVERAM
     REPT 16
     ldh [_addr], a
-_addr = _addr + 1
+DEF _addr = _addr + 1
     ENDR
 
     ld a, $80
@@ -194,9 +194,9 @@ _addr = _addr + 1
     ; Set volume
     ld a, $77
     ldh [rAUDVOL], a
-	  ; silence ch3
-	  xor a
-	  ldh [rAUD3LEVEL], a
+    ; silence ch3
+    xor a
+    ldh [rAUD3LEVEL], a
 
     ;; Enable the HBlank interrupt on scanline 0
     ldh a, [rSTAT]
