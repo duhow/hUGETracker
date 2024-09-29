@@ -1,7 +1,7 @@
 object frmTracker: TfrmTracker
-  Left = 327
+  Left = 384
   Height = 950
-  Top = 134
+  Top = 132
   Width = 1512
   AllowDropFiles = True
   Caption = 'hUGETracker'
@@ -79,7 +79,7 @@ object frmTracker: TfrmTracker
           Top = 11
           Width = 396
           Caption = 'Song information'
-          ClientHeight = 252
+          ClientHeight = 231
           ClientWidth = 392
           ParentFont = False
           TabOrder = 0
@@ -2669,6 +2669,7 @@ object frmTracker: TfrmTracker
     Top = 75
   end
   object InstrumentSaveDialog: TSaveDialog
+    DefaultExt = '.ugi'
     Filter = 'hUGETracker Instruments|*.ugi'
     Left = 107
     Top = 75
@@ -2738,16 +2739,19 @@ object frmTracker: TfrmTracker
     Top = 64
   end
   object GBSSaveDialog: TSaveDialog
+    DefaultExt = '.gbs'
     Filter = 'Gameboy Soundtrack|*.gbs'
     Left = 384
     Top = 32
   end
   object WaveSaveDialog: TSaveDialog
+    DefaultExt = '.ugw'
     Filter = 'hUGETracker Waves|*.ugw'
     Left = 491
     Top = 32
   end
   object GBSaveDialog: TSaveDialog
+    DefaultExt = '.gb'
     Filter = 'Gameboy ROM|*.gb'
     Left = 437
     Top = 32
@@ -2913,12 +2917,6 @@ object frmTracker: TfrmTracker
         OnClick = TrackerPopupRedoClick
       end
     end
-  end
-  object WavSaveDialog: TSaveDialog
-    DefaultExt = '.wav'
-    Filter = 'Wave files|*.wav'
-    Left = 544
-    Top = 32
   end
   object SynAnySyn1: TSynAnySyn
     Enabled = False
@@ -3195,16 +3193,19 @@ object frmTracker: TfrmTracker
     end
   end
   object GBDKCSaveDialog: TSaveDialog
+    DefaultExt = '.c'
     Filter = 'GBDK C File|*.c'
     Left = 331
     Top = 32
   end
   object RGBDSAsmSaveDialog: TSaveDialog
+    DefaultExt = '.asm'
     Filter = 'RGBDS Assembly|*.asm'
     Left = 363
     Top = 64
   end
   object VGMSaveDialog: TSaveDialog
+    DefaultExt = '.vgm'
     Filter = 'VGM Rip|*.vgm'
     Left = 475
     Top = 69

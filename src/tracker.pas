@@ -142,7 +142,6 @@ type
     TestOctave5Button5: TButton;
     WaveEditPopup: TPopupMenu;
     SynAnySyn1: TSynAnySyn;
-    WavSaveDialog: TSaveDialog;
     ToolButton10: TToolButton;
     TrackerPopupEditEffect: TMenuItem;
     TrackerPopupTransposeOctaveUp: TMenuItem;
