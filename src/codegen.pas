@@ -47,6 +47,7 @@ var
   I, J: Integer;
   Pat: PPattern;
   Cell: TCell;
+  InstValue: Integer;
   Highest: ^Integer;
   Waveform: Integer;
 begin
@@ -72,8 +73,13 @@ begin
       for Cell in Pat^ do begin
         if Cell.Instrument = 0 then Continue;
 
-        if Cell.Instrument > Highest^ then
-          Highest^ := Cell.Instrument;
+        if InRange(Cell.Instrument, 0, 15) then
+          InstValue := Cell.Instrument
+        else
+          InstValue := 0;
+
+        if InstValue > Highest^ then
+          Highest^ := InstValue;
 
         if (I = 2) then begin // Wave channel
           Waveform := Song.Instruments.Wave[Cell.Instrument].Waveform;
